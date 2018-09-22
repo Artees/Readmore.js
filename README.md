@@ -56,6 +56,7 @@ $('article').readmore({
 * `beforeToggle: function() {}` called after a more or less link is clicked, but *before* the block is collapsed or expanded
 * `afterToggle: function() {}` called *after* the block is collapsed or expanded
 * `blockProcessed: function() {}` called once per block during initilization after Readmore.js has processed the block.
+* `before: false` insert the "Read more" and "Close" links before the block of text
 
 If the element has a `max-height` CSS property, Readmore.js will use that value rather than the value of the `collapsedHeight` option.
 

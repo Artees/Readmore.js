@@ -203,7 +203,16 @@
           'id': id
         });
 
-        current.after($(useLink)
+        function insertLink(link, before) {
+          if (before) {
+            current.before(link);
+          }
+          else {
+            current.after(link);
+          }
+        }
+
+        insertLink($(useLink)
           .on('click', (function(_this) {
             return function(event) {
               _this.toggle(this, current[0], event);
@@ -212,7 +221,8 @@
           .attr({
             'data-readmore-toggle': id,
             'aria-controls': id
-          }));
+          }),
+          this.options.before);
 
         if (! this.options.startOpen) {
           current.css({
@@ -339,4 +349,3 @@
   };
 
 }));
-
